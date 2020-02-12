@@ -1,0 +1,25 @@
+{
+  "name": "sniffer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cap": "^0.2.1",
+    "chalk": "^3.0.0",
+    "pcap": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lagmanzaza/ITCS422-Sniffer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lagmanzaza/ITCS422-Sniffer/issues"
+  },
+  "homepage": "https://github.com/lagmanzaza/ITCS422-Sniffer#readme"
+}

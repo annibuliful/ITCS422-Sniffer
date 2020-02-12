@@ -1,7 +1,8 @@
 const pcap = require("pcap");
 const tcp_tracker = new pcap.TCPTracker();
-const pcap_session = pcap.createSession("en0", "ip proto \\tcp");
 const chalk = require("chalk");
+
+const pcap_session = pcap.createSession("en0", "ip proto \\tcp \\udp");
 
 const getSourceAndDestIPAddress = packet => {
   const src = packet.payload.payload.saddr.addr;
@@ -42,6 +43,7 @@ const getTimeStamp = packet => packet.payload.payload.payload.options.timestamp;
 const getCheckSum = packet => packet.payload.payload.headerChecksum;
 
 const isMoreFragment = packet => packet.payload.payload.flags.moreFragments;
+
 pcap_session.on("packet", function(raw_packet) {
   const packet = pcap.decode.packet(raw_packet);
   const { src, dest, srcPort, destPort } = getSourceAndDestIPAddress(packet);
